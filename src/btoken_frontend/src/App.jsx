@@ -3,6 +3,8 @@ import TokenCard from "./components/TokenCard";
 import { useState, useEffect } from 'react';
 import { btoken_backend } from 'declarations/btoken_backend';
 import TransferForm from "./components/TransferForm";  
+import TransferFormICRC2 from "./components/TransferFormICRC2";  
+
 
 function App() {
   const [name, setName] = useState('');
@@ -47,6 +49,8 @@ function App() {
             />
 
             <TransferForm />  
+
+            <TransferFormICRC2 /> 
         </div>
     </main>
   );

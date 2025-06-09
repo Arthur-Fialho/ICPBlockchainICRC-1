@@ -1,4 +1,4 @@
- import BtokenLedger "canister:btoken_icrc1_ledger_canister";      
+ import BtokenLedger "canister:btoken_icrc1_ledger_canister";    
  import Principal "mo:base/Principal";
  import Result "mo:base/Result";
  import Error "mo:base/Error";     
@@ -109,4 +109,26 @@
       let balance = await getBalance(owner);      
       return balance;
   };
+
+  public shared(msg) func transferFrom(to: Principal, amount: Nat) : async Result.Result<BtokenLedger.BlockIndex, Text> {
+  let transferFromArgs : BtokenLedger.TransferFromArgs = {
+                spender_subaccount = null;
+                from = { owner = msg.caller; subaccount = null };                                                              
+                to = { owner = to; subaccount = null };                                                              
+                amount = amount;
+                fee = null;
+                memo = null;
+               created_at_time = null; };
+  try {
+      let transferResult = await BtokenLedger.icrc2_transfer_from(transferFromArgs);
+      switch (transferResult) {
+          case (#Err(transferError)) {
+             return #err("Não foi possível transferir fundos:\n" # debug_show (transferError));
+          };
+          case (#Ok(blockIndex)) { return #ok blockIndex };
+      };
+  } catch (error : Error) {
+      return #err("Mensagem de rejeição: " # Error.message(error));
+  };
+};  
  }; 

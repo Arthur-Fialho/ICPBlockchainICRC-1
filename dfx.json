@@ -6,6 +6,16 @@
       "wasm": "https://github.com/dfinity/ic/releases/download/ledger-suite-icrc-2025-05-22/ic-icrc1-ledger.wasm.gz",
       "init_arg": "(variant {Init = record { token_symbol = \"btoken\"; token_name = \"Bootcamp Coin\"; minting_account = record { owner = principal \"7kmue-l4bmc-v5vxe-mryps-37ao3-lasxf-u4m65-wwo7c-ay4ta-pl2h4-bqe\" }; transfer_fee = 10_000; metadata = vec {}; feature_flags = opt record{icrc2 = true}; initial_balances = vec { record { record { owner = principal \"rs2fv-6q4em-wyu6b-2s2qg-dstqf-bfkzo-yis7l-f5lvc-bvvpk-4ep6r-pqe\"; }; 100_000_000_000; }; }; archive_options = record { num_blocks_to_archive = 1000; trigger_threshold = 2000; controller_id = principal \"qrhkm-dolof-77oeo-4mipe-n64b3-zjbl6-qx54w-c7vpi-2ed4z-m56ye-vae\"; cycles_for_archive_creation = opt 10000000000000; }; } })"
     },
+    "internet_identity": {
+    "type": "custom",
+    "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+    "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz",
+    "shrink": false,
+    "remote": {
+      "id": {
+        "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"               
+      }}
+    },
     "btoken_backend": {
       "main": "src/btoken_backend/main.mo",
       "type": "motoko"

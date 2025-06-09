@@ -63,3 +63,34 @@ h2 {
   text-align: center;
   color: #2f3542;
 }  
+
+.inline-fields {
+  display: flex;
+  gap: 12px; /* Espaço entre input e botão */
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.inline-fields input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-login {
+  padding: 10px 16px;
+  background-color: #4b7bec;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap; /* evita quebra de linha no texto */
+}
+
+.btn-login:hover {
+  background-color: #3867d6;
+}  
