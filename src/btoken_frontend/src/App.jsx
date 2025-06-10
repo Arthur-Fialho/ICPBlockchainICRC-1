@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { btoken_backend } from 'declarations/btoken_backend';
 import TransferForm from "./components/TransferForm";  
 import TransferFormICRC2 from "./components/TransferFormICRC2";  
+import TransferFormPlug from "./components/TransferFormPlug";  
 
 
 function App() {
@@ -51,6 +52,8 @@ function App() {
             <TransferForm />  
 
             <TransferFormICRC2 /> 
+
+            <TransferFormPlug />
         </div>
     </main>
   );
